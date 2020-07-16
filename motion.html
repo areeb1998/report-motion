@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html>  
+<head>
+
+<style>
+
+
+#bt1
+{
+font-size: 23px;
+font-color: blue;
+padding: 5px;
+border-radius: 1px;
+margin: 2px;
+width: 90px;
+
+}
+
+#bt2
+{
+font-size: 23px;
+font-color: blue;
+padding: 5px;
+border-radius: 1px;
+margin: 2px;
+width: 90px;
+
+}
+#bt3
+{
+font-size: 23px;
+font-color: blue;
+padding: 5px;
+border-radius: 1px;
+margin: 2px;
+width: 90px;
+
+}
+
+form{
+padding-top: 120px;
+text-align: center;
+font-size: 30px;
+
+}
+
+input{
+
+width: 250px;
+hight: 40px;
+font-size: 20px;
+}
+
+
+
+
+</style>
+<script>
+            
+            function add()
+            {
+                // get input values
+                var right = document.getElementById('right').value;
+                 var forward = document.getElementById('forward').value;
+                  var left = document.getElementById('left').value;
+                  
+                  // get the html table
+                  // 0 = the first table
+                  var table = document.getElementsByTagName('table')[0];
+                  
+                  // add new empty row to the table
+                  // 0 = in the top 
+                  // table.rows.length = the end
+                  // table.rows.length/2+1 = the center
+                  var newRow = table.insertRow(table.rows.length/2+1);
+                  
+                  // add cells to the row
+                  var cel1 = newRow.insertCell(0);
+                  var cel2 = newRow.insertCell(1);
+                  var cel3 = newRow.insertCell(2);
+                  
+                  // add values to the cells
+                  cel1.innerHTML = right;
+                  cel2.innerHTML = forward;
+                  cel3.innerHTML = left;
+            }
+            
+
+
+
+</script>
+
+
+
+
+</head>
+<body>
+
+
+ 
+
+right:   <input id="right" type="text" name="right"><br><br>
+
+
+forward: <input id="forward" type="text" name="forward"><br><br>
+
+
+left:    <input id="left" type="text" name="  left  "><br><br>
+
+
+
+
+
+
+
+<button onClick="add();">add </button>
+
+
+
+
+<table border="1" id="Courses" >
+            
+<tr>
+<th>right</th>
+<th>forward</th>
+<th>left</th>
+
+</tr>
+
+</table>
+
+
+
+
+<button ondblclick="row()">Delete Row</button> 
+  
+    <script> 
+
+            function row() { 
+          // delete row (index-1). 
+          document.getElementById("Courses").deleteRow(1); 
+        
+    
+        
+            document.getElementById('right').value = "";
+                  document.getElementById('forward').value = "";
+                  document.getElementById('left').value = "";
+                  
+          
+        } 
+    </script> 
+
+
+
+
+</body>
+
+</html>
